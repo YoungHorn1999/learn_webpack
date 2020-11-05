@@ -1,0 +1,18 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env", 
+            {
+                "targets": {
+                    "chrome": "67"
+                },
+                "useBuiltIns": "usage"
+            }
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": ["@babel/plugin-syntax-dynamic-import"]
+}
+// 执行顺序是从下往上，从右往左
+// 先转换react代码
+// 再转换ES6代码

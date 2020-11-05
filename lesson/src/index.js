@@ -1,12 +1,12 @@
-import avatar from './avatar.jpg'
-import './index.scss'
+async function getComponent() {
+    const { default: _ } = await import(/* webpackChunkName: "lodash" */ 'lodash')
+    const element = document.createElement('div')
+    element.innerHTML = _.join(['Dell','Lee'], '-')
+    return element
+}
 
-var img = new Image()
-img.src = avatar
-img.classList.add('avatar')
-
-var root = document.getElementById('root')
-root.append(img)
-
-
-
+document.addEventListener('click', () => {
+    getComponent().then(element => {
+        document.body.appendChild(element)
+    })
+})
